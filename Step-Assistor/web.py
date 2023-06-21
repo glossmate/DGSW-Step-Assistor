@@ -23,7 +23,7 @@ app = Flask(__name__,
 	static_folder='./www',
 	static_url_path='/'
 )
-CORS(app, resources={r'*': {'origins': 'http://knu.1key.kr:9090/api, http://knu.1key.kr:9000'}})
+#CORS(app, resources={r'*': {'origins': 'http://knu.1key.kr:9090/api, http://knu.1key.kr:9000'}})
 #CORS(app)
 
 sock = Sock(app)
@@ -131,4 +131,4 @@ def echo(sock):
 		sock.send(json.dumps(OBJ_RESULT, indent=4))
 
 if __name__ == '__main__':
-	app.run(host="0.0.0.0", port=9000)
+	app.run(host="0.0.0.0", port=8020)
