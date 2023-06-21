@@ -57,7 +57,7 @@ function KNU_API_ACCESS(API_ACCESS_INFORMATION, ON_RESULT) {
 	});
 	
 	$.ajax({
-		url : $('#TXT_API_SERVER_URL').val(),
+		url : window.location.origin,
 		type : 'post',
 		data : POST_DATAS,
 		async: true, 

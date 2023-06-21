@@ -97,7 +97,7 @@ def receive_image(image):
 
 
     image = base64_to_image(image)
-    detections = yolov7.detect(image)
+    detections = yolov7.detect(image, track=True)
     detected_image = draw(image, detections)
     
     frame_resized = cv2.resize(detected_image, (640, 360))

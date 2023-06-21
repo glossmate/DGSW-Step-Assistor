@@ -5,9 +5,9 @@ import numpy as np
 import cv2
 
 yolov7 = YOLOv7()
-yolov7.load('coco.weights', classes='coco.yaml', device='cpu') # use 'gpu' for CUDA GPU inference
+yolov7.load('coco.weights', classes='coco.yaml', device='gpu') # use 'gpu' for CUDA GPU inference
 
-video = cv2.VideoCapture('video.mp4')
+video = cv2.VideoCapture('YT-XC4_2NoiP_4.mp4')
 width  = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = int(video.get(cv2.CAP_PROP_FPS))
