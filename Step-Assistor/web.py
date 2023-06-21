@@ -23,7 +23,7 @@ app = Flask(__name__,
 	static_folder='./www',
 	static_url_path='/'
 )
-CORS(app, resources={r'*': {'origins': 'http://knu.1key.kr:9090/api, http://knu.1key.kr:9000'}})
+#CORS(app, resources={r'*': {'origins': 'http://knu.1key.kr:9090/api, http://knu.1key.kr:9000'}})
 #CORS(app)
 
 sock = Sock(app)
@@ -85,8 +85,8 @@ def index():
 	else:
 		args_JSON = request.args;
 	args_JSON = JSON_PARSE_RECURSION(args_JSON)
-	"""
-	print(json.dumps(args_JSON, indent=4))
+	#"""
+	print("KKKKK -> " + json.dumps(args_JSON, indent=4))
 	#"""
 	if (len(args_JSON.keys()) > 0):
 		return API(args_JSON);

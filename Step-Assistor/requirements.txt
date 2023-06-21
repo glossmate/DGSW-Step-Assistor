@@ -83,3 +83,4 @@ typing_extensions==4.4.0
 urllib3==1.26.13
 visualdl==2.4.1
 easy-paddle-ocr==0.0.3
+Cython==0.29.32
