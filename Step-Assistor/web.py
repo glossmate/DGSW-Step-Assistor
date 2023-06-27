@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_file, request, make_response
 from flask_sock import Sock
 import requests
+import ssl
 
 import base64
 import os
@@ -131,4 +132,10 @@ def echo(sock):
 		sock.send(json.dumps(OBJ_RESULT, indent=4))
 
 if __name__ == '__main__':
-	app.run(host="0.0.0.0", port=8020)
+	#"""
+	ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+	#ssl_context.load_cert_chain(certfile='www/CERT/1key.kr.crt', keyfile='www/CERT/1key.kr.key')
+	ssl_context.load_cert_chain(certfile='/etc/letsencrypt/live/knu.1key.kr/fullchain.pem', keyfile='/etc/letsencrypt/live/knu.1key.kr/privkey.pem')
+	app.run(host="0.0.0.0", port=9000, ssl_context=ssl_context, debug=True)	
+	#"""
+	#app.run(host="0.0.0.0", port=9000, debug=True)	

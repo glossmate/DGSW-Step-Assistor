@@ -240,11 +240,12 @@
 				ng_app_injects: [],
 				ng_controller: 'WEBAPPS_CONTROLLER',
 			}, function () {
-				_RS.WebSocket_URL = 'ws://' + location.host + '/image';
+				_RS.WebSocket_URL = 'wss://' + location.host + '/image';
+//				_RS.WebSocket_URL = 'ws://' + location.host + '/image';
 				setTimeout(function () {
 					INIT_WIDGETS();
-					INIT_YOLO_WS_CONNECTION(_RS.WebSocket_URL);
 					CAMERA_ON();
+					INIT_YOLO_WS_CONNECTION(_RS.WebSocket_URL);
 				}, 100);
 			});
 		});
